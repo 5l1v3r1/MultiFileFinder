@@ -1,0 +1,13 @@
+# Multiple File Finder
+# ====================
+# This definition file will search for all files in the Item block.
+
+[Item]
+MatchMode=OR
+ReportTable=<DEFAULT>
+
+// *** ENTER RULES HERE ***
+// e.g.:
+// Full=Sm:\Windows\System32\config\SAM
+// Full=Sm:\Windows\System32\config\SOFTWARE
+// Full=Sm:\Windows\System32\config\SYSTEM

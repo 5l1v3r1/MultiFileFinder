@@ -1,0 +1,24 @@
+# Multiple File Finder
+# ====================
+# Registry Export definition file with automatic
+# analysis with RegistryReport.
+
+[Default]
+ReportTable=Windows Registry
+ExportFolder=<SELECTFOLDER:Select an export folder for Windows Registry files:>
+
+[Item]
+Path=Sm:\Windows\System32\config\
+Name=R:^(SYSTEM|SOFTWARE|SAM)$
+ExportExisting=Overwrite
+
+[Item]
+Path=R:\\(Documents and Settings|Dokumente und Einstellungen|Users)\\
+Path=RN:\\(All Users|Default User|LocalService|NetworkService|Default)\\$
+Name=Sm:NTUSER.DAT
+ExportExisting=ForceRenameOverwrite
+ExportRenameMask=<NAME>_<PARENT><EXT>
+
+[Finalize]
+# Change the path of RegistryReport and uncomment the following line.
+# Execute=open|C:\Applications\RegistryReport\RegReport.exe|||"<LASTEXPORTFOLDER>" /R
